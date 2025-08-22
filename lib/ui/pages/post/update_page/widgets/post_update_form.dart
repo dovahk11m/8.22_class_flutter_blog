@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blog/_core/constants/size.dart';
 import 'package:flutter_blog/_core/utils/validator_util.dart';
+import 'package:flutter_blog/providers/global/post/post_write_notifier.dart';
 import 'package:flutter_blog/ui/widgets/custom_elavated_button.dart';
 import 'package:flutter_blog/ui/widgets/custom_text_area.dart';
 import 'package:flutter_blog/ui/widgets/custom_text_form_field.dart';
@@ -14,6 +15,8 @@ class PostUpdateForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //
+
     return Form(
       key: _formKey,
       child: ListView(
@@ -31,7 +34,9 @@ class PostUpdateForm extends StatelessWidget {
           const SizedBox(height: largeGap),
           CustomElevatedButton(
             text: "글 수정하기",
-            click: () {},
+            click: () {
+              //
+            },
           ),
         ],
       ),
