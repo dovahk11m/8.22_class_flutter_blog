@@ -6,6 +6,7 @@ import 'package:flutter_blog/_core/utils/exception_handler.dart';
 import 'package:flutter_blog/data/models/post.dart';
 import 'package:flutter_blog/data/models/repository/post_repository.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:logger/logger.dart';
 
 class PostListModel {
   bool isFirst;
@@ -103,6 +104,10 @@ class PostListNotifier extends Notifier<PostListModel?> {
   }
 
   // 2 refreshPostList - 새로고침
+  Future<void> refreshAfterWrite() async {
+    Logger().d("게시글 작성 후 목록 새로고침 시작");
+    await fetchPosts(page: 0);
+  }
 
   // 3 loadMorePosts` - 추가 데이터 요청
   Future<Map<String, dynamic>> loadMorePosts() async {

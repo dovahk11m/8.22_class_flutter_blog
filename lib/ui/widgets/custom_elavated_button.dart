@@ -2,9 +2,15 @@ import 'package:flutter/material.dart';
 
 class CustomElevatedButton extends StatelessWidget {
   final String text;
-  final click;
 
-  const CustomElevatedButton({required this.text, required this.click});
+  //비활성화 기능 추가를 위해 nullable로 변경
+  //중복 클릭 방지
+  final VoidCallback? click;
+
+  const CustomElevatedButton({
+    required this.text,
+    required this.click,
+  });
 
   @override
   Widget build(BuildContext context) {
